@@ -11,4 +11,10 @@ export interface ListMovie {
      Type: string
      Poster: string
    }
+export interface MappedMovie{
+  id: string
+  title: string
+  year: string
+  poster: string
+}
    

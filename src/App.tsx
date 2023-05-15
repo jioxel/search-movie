@@ -1,25 +1,27 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import './App.css'
 import { MoviesList } from './components/MoviesList'
 
 function App() {
-  const [searchMovie, setSearchMovie] = useState('')
-  const handleSearch=(e:React.ChangeEvent<HTMLInputElement>)=>{
-    console.log(searchMovie)
-    setSearchMovie(e.target.value)
-  }
+  const[queryMovie,setQueryMovie] = useState('');
+  const [value,setValue] = useState('')
   const handleSubmit = (e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault()
+    // const {query} =Object.fromEntries(new FormData(e.target))
+    // setQueryMovie(query.toString())
     
+  }
+  const handleChange =(e:React.ChangeEvent<HTMLInputElement>)=>{
+    setQueryMovie (e.target.value)
   }
   return (
     <>
     <h2>2</h2>
       <form onSubmit={(e)=> handleSubmit(e) }>
-        <input type="text" name="search" id="search" onChange={e=>handleSearch(e)}/>
+        <input   name = 'query' placeholder='Search' value={queryMovie} onChange={e=>handleChange(e)}/>
         <button type='submit'> Search </button>
       </form>
-        <MoviesList searchMovie={searchMovie}/>
+        <MoviesList searchMovie={queryMovie}/>
 
     </>
   )

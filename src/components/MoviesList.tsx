@@ -1,36 +1,30 @@
-import { useEffect, useState } from "react"
-import { ListMovie, Movie } from '../types/movie';
-const URL = 'https://www.omdbapi.com/'
-const API= '4287ad07'
+
+import { MappedMovie } from '../types/movie';
+import { useMovies } from "../hooks/useMovies";
+
+
+
 export const MoviesList = ({searchMovie}:{searchMovie:string})=>{
-     const [movies, setMovies] = useState<ListMovie>()
-     useEffect(()=>{
-          const data = async ()=>{
-               const resp = await fetch(`${URL}?apikey=${API}&s=${''}`)
-               const res = await resp.json()
-               
-               console.log(res)
-               setMovies(res)
-          }
-          data()
-     },[searchMovie])
-     return <div>
+
+     const {movies} = useMovies(searchMovie);
+
+     return <div className='movies'>
           {
-               movies?.Response == 'True' && movies?.Search.map(movie=> <Card  key ={ movie.imdbID}movie={movie}/>)
+               movies ? movies.map(movie=> <Movie  key ={movie.id} movie={movie}/>) : <h2>Movies not found</h2>
           }
      </div>
 }
 
 
 
-const Card = ({movie}:{movie:Movie})=>{
-     return <div>
-          <div>
-               <img src={movie.Poster} alt="" />
+const Movie = ({movie}:{movie:MappedMovie})=>{
+     return <div className='card'>
+          <div className='img'>
+               <img src={movie.poster} alt="" />
           </div>
-          <div>
-               <h2>{movie.Title}</h2>
-               <p>{movie.Year}</p>
+          <div className='description'>
+               <h2 className='title'>{movie.title}</h2>
+               <p className='year'>{movie.year}</p>
           </div>
      </div>
 }

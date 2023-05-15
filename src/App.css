@@ -1,0 +1,26 @@
+.movies{
+     width: 100%;
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+     justify-content: center;
+     align-items: center;
+}
+.card{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     width: 400px;
+}
+.img{
+
+}
+.description{
+     
+}
+.title{
+
+}
+.year{
+
+}
