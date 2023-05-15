@@ -17,7 +17,6 @@ function App() {
   console.log('render')
   return (
     <>
-    <h2>2</h2>
       <form onSubmit={(e)=> handleSubmit(e) }>
         <input   name = 'query' placeholder='Search' value={queryMovie} onChange={e=>handleChange(e)}/>
         <button type='submit'> Search </button>

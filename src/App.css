@@ -1,3 +1,15 @@
+
+input{
+     padding: 1rem;
+     border-radius: 10px;
+     font-size: 2rem;
+}
+button{
+     border-radius: 10px;
+     padding: 1rem;
+     font-size: 2rem;
+     margin-left: 2rem;
+}
 .movies{
      width: 100%;
      display: grid;
@@ -20,8 +32,10 @@
      
 }
 .title{
-
+     text-align: center;
+     color: aliceblue;
 }
 .year{
-
+     text-align: center;
+     color: aliceblue;
 }

@@ -13,6 +13,7 @@ body{
   display: flex;
   justify-content: center;
   max-width: 1300px;
+  background-color: rgb(49, 49, 49);
 
 }
 #root{
@@ -22,4 +23,7 @@ body{
   align-items: center;
   width: 100%;
   
+}
+form{
+  padding:5rem 0;
 }
