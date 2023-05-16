@@ -10,7 +10,7 @@ export const MoviesList = ({searchMovie}:{searchMovie:string})=>{
 
      return <div className='movies'>
           {
-               movies ? movies.map(movie=> <Movie  key ={movie.id} movie={movie}/>) : <h2 style={{textAlign:'center'}}>Movies not found</h2>
+               movies ? movies.map(movie=> <Movie  key ={movie.id} movie={movie}/>) : <h2 style={{textAlign:'center',color:"white"}}>Movies not found</h2>
           }
      </div>
 }
